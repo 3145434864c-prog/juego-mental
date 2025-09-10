@@ -45,12 +45,21 @@
       position: relative; perspective: 800px;
       cursor: pointer; user-select: none;
     }
-    .reverso, .cara {
-      position: absolute; inset: 0; border-radius: 12px;
-      backface-visibility: hidden;
-      background: #12263a url('interrogacion.png') center/cover no-repeat;
-      transition: transform 0.6s ease;
-    }
+.reverso, .cara {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+}
+
+.reverso {
+  background: url("interrogacion.jpg") center/cover no-repeat; /* Aquí se pone la imagen */
+}
+
+.cara {
+  background: #12263a; /* Fondo de la cara de la carta */
+}
     .cara { transform: rotateY(180deg); overflow: hidden; }
     .cara img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .carta.volteada .cara { transform: rotateY(0); }
@@ -159,6 +168,7 @@
     transform: rotate(360deg);
   }
 }
+
   </style>
 </head>
 <body>
@@ -201,6 +211,8 @@
       <tbody id="tablaJugadores"></tbody>
     </table>
   </div>
+
+
 
   <!-- AUDIOS -->
   <audio id="audioClickMp3" src="sonidos/click.mp3"></audio>
